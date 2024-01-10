@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>todoアプリ</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <header>
+            <h1>ToDoアプリ</h1>
+        </header>
+        <form method="post" action="{{ url_for('register') }}">
+            <table border="1">
+                <tr>
+                    <th>タイトル</th>
+                    <th>詳細</th>
+                    <th>期日</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="title"></td>
+                    <td><input type="text" name="detail"></td>
+                    <td><input type="date" name="due"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="追加"></a>
+        </form>
+    </body>
+</html>

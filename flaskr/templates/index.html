@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>todoアプリ</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <header>
+            <h1>ToDoアプリ</h1>
+        </header>
+        {% if todos == [] %}
+            <p>todoはありません</p>
+        {% else %}
+        {% for todo in todos %}
+            <h2> タイトル：{{ todo.title }}</h2>
+            <p> 期日：{{ todo.due }}</p>
+            <a class="btn" href="{{ url_for('delete', id=todo.id) }}">削除</a>
+        {% endfor %}
+        {% endif %}
+        <br>
+        <a class="btn" href="{{ url_for('form') }}">追加</a>
+    </body>
+</html>
